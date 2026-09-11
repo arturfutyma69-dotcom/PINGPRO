@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ping Pro Academy — Zoloche</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#07111f;
+  color:white;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+  padding:26px 20px 10px;
+  text-align:center;
+}
+
+.logo{
+  font-size:16px;
+  letter-spacing:6px;
+  color:#78e8ff;
+  font-weight:900;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+  text-align:center;
+  padding:40px 18px 25px;
+}
+
+.hero-icon{
+  font-size:90px;
+}
+
+h1{
+  margin:20px 0 5px;
+  font-size:58px;
+  line-height:.92;
+  font-weight:900;
+}
+
+h1 span{
+  color:#dfff20;
+}
+
+.place{
+  margin-top:22px;
+  font-size:20px;
+  letter-spacing:10px;
+  color:#6ee7ff;
+  font-weight:900;
+}
+
+.slogan{
+  margin-top:32px;
+  font-size:18px;
+  color:#b6c2d4;
+}
+
+/* ---------- MAIN MENU ---------- */
+
+.menu{
+  max-width:720px;
+  margin:auto;
+  padding:30px 18px 60px;
+}
+
+.big-button{
+  width:100%;
+  min-height:105px;
+
+  display:flex;
+  align-items:center;
+
+  padding:20px;
+  margin-bottom:16px;
+
+  background:#122033;
+  border:2px solid #203651;
+  border-radius:30px;
+
+  color:white;
+  text-decoration:none;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.big-button:active{
+  transform:scale(.98);
+}
+
+.big-button.green{
+  background:#dfff20;
+  color:#07111f;
+  border:none;
+}
+
+.icon-box{
+  width:72px;
+  height:72px;
+
+  min-width:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:22px;
+
+  background:#07111f;
+
+  font-size:36px;
+
+  margin-right:20px;
+}
+
+.big-button:not(.green) .icon-box{
+  background:#1c3048;
+}
+
+.btn-text{
+  text-align:left;
+}
+
+.btn-title{
+  font-size:25px;
+  font-weight:900;
+}
+
+.btn-sub{
+  margin-top:6px;
+  font-size:15px;
+  color:#94a7bf;
+}
+
+.green .btn-sub{
+  color:#5f7200;
+}
+
+/* ---------- PAGES ---------- */
+
+.page{
+  display:none;
+  min-height:100vh;
+  padding:20px 18px 70px;
+}
+
+.page.active{
+  display:block;
+}
+
+.page-wrap{
+  max-width:720px;
+  margin:auto;
+}
+
+.back{
+  display:inline-block;
+  margin:10px 0 25px;
+
+  padding:13px 18px;
+
+  border-radius:16px;
+
+  background:#15263b;
+  color:white;
+
+  font-weight:800;
+
+  cursor:pointer;
+}
+
+.page-title{
+  font-size:42px;
+  font-weight:900;
+  margin:10px 0 25px;
+}
+
+.card{
+  padding:22px;
+  margin-bottom:16px;
+
+  background:#111f31;
+
+  border:2px solid #1d334c;
+
+  border-radius:25px;
+}
+
+.card h3{
+  margin:0 0 10px;
+  font-size:23px;
+}
+
+.card p{
+  margin:5px 0;
+  color:#b4c1d1;
+  line-height:1.5;
+}
+
+.highlight{
+  color:#dfff20;
+  font-weight:900;
+}
+
+/* ---------- PLAYER ---------- */
+
+.player{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.player-info{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.avatar{
+  width:58px;
+  height:58px;
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#dfff20;
+  color:#07111f;
+
+  font-weight:900;
+  font-size:22px;
+}
+
+.level{
+  color:#74e8ff;
+  font-size:13px;
+  margin-top:4px;
+}
+
+.points{
+  font-weight:900;
+  color:#dfff20;
+}
+
+/* ---------- RANKING ---------- */
+
+.rank{
+  display:grid;
+  grid-template-columns:45px 1fr 80px;
+  align-items:center;
+  gap:10px;
+}
+
+.rank-number{
+  font-size:26px;
+  font-weight:900;
+  color:#dfff20;
+}
+
+/* ---------- RULES ---------- */
+
+.rules-list{
+  padding-left:22px;
+}
+
+.rules-list li{
+  margin-bottom:13px;
+  line-height:1.5;
+  color:#c4cfdd;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#62738a;
+  font-size:13px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:500px){
+
+  h1{
+    font-size:50px;
+  }
+
+  .btn-title{
+    font-size:22px;
+  }
+
+  .page-title{
+    font-size:36px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HOME ================= -->
+
+<div id="homePage" class="page active">
+
+<header>
+  <div class="logo">🏓 PING PRO</div>
+</header>
+
+<section class="hero">
+
+  <div class="hero-icon">🏓</div>
+
+  <h1>
+    PING PRO<br>
+    <span>ACADEMY</span>
+  </h1>
+
+  <div class="place">
+    ZOLOCHE
+  </div>
+
+  <div class="slogan">
+    ТРЕНУЙСЯ • ГРАЙ • ПЕРЕМАГАЙ
+  </div>
+
+</section>
+
+<div class="menu">
+
+  <div class="big-button green" onclick="openPage('trainingPage')">
+
+    <div class="icon-box">🔥</div>
+
+    <div class="btn-text">
+      <div class="btn-title">
+        ПОЧАТИ ТРЕНУВАННЯ
+      </div>
+
+      <div class="btn-sub">
+        Вправи та програма тренування
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="big-button" onclick="openPage('playersPage')">
+
+    <div class="icon-box">👥</div>
+
+    <div class="btn-text">
+      <div class="btn-title">ГРАВЦІ</div>
+      <div class="btn-sub">Учні Ping Pro Academy</div>
+    </div>
+
+  </div>
+
+
+  <div class="big-button" onclick="openPage('levelsPage')">
+
+    <div class="icon-box">⭐</div>
+
+    <div class="btn-text">
+      <div class="btn-title">РІВНІ</div>
+      <div class="btn-sub">Шлях від новачка до PRO</div>
+    </div>
+
+  </div>
+
+
+  <div class="big-button" onclick="openPage('matchesPage')">
+
+    <div class="icon-box">⚔️</div>
+
+    <div class="btn-text">
+      <div class="btn-title">МАТЧІ</div>
+      <div class="btn-sub">Результати тренувальних ігор</div>
+    </div>
+
+  </div>
+
+
+  <div class="big-button" onclick="openPage('competitionsPage')">
+
+    <div class="icon-box">🏆</div>
+
+    <div class="btn-text">
+      <div class="btn-title">ЗМАГАННЯ</div>
+      <div class="btn-sub">Турніри та кубки</div>
+    </div>
+
+  </div>
+
+
+  <div class="big-button" onclick="openPage('rankingPage')">
+
+    <div class="icon-box">🥇</div>
+
+    <div class="btn-text">
+      <div class="btn-title">РЕЙТИНГ</div>
+      <div class="btn-sub">Хто зараз №1?</div>
+    </div>
+
+  </div>
+
+
+  <div class="big-button" onclick="openPage('rulesPage')">
+
+    <div class="icon-box">📖</div>
+
+    <div class="btn-text">
+      <div class="btn-title">ПРАВИЛА</div>
+      <div class="btn-sub">Правила гри та школи</div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+PING PRO ACADEMY<br><br>
+ZOLOCHE • 2026 🏓
+</footer>
+
+</div>
+
+
+<!-- ================= TRAINING ================= -->
+
+<div id="trainingPage" class="page">
+
+<div class="page-wrap">
+
+<div class="back" onclick="goHome()">
+← НАЗАД
+</div>
+
+<div class="page-title">
+🔥 Тренування
+</div>
+
+<div class="card">
+  <h3>1. Розминка</h3>
+  <p>5–10 хвилин.</p>
+  <p>Руки, плечі, ноги, легкі рухи біля столу.</p>
+</div>
+
+<div class="card">
+  <h3>2. Контроль м'яча</h3>
+  <p>Набивання м'яча на ракетці.</p>
+  <p>Ціль: <span class="highlight">50 разів без падіння</span>.</p>
+</div>
+
+<div class="card">
+  <h3>3. Форхенд</h3>
+  <p>Удар справа.</p>
+  <p>10 серій по 10 ударів.</p>
+</div>
+
+<div class="card">
+  <h3>4. Бекхенд</h3>
+  <p>Удар зліва.</p>
+  <p>10 серій по 10 ударів.</p>
+</div>
+
+<div class="card">
+  <h3>5. Подача</h3>
+  <p>20 коротких подач.</p>
+  <p>20 довгих подач.</p>
+</div>
+
+<div class="card">
+  <h3>6. Матч</h3>
+  <p>Зіграйте матч до 3 виграних партій.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= PLAYERS ================= -->
+
+<div id="playersPage" class="page">
+
+<div class="page-wrap">
+
+<div class="back" onclick="goHome()">← НАЗАД</div>
+
+<div class="page-title">
+👥 Гравці
+</div>
+
+<div class="card player">
+
+  <div class="player-info">
+
+    <div class="avatar">М</div>
+
+    <div>
+      <h3>Макс</h3>
+      <div class="level">PLAYER</div>
+    </div>
+
+  </div>
+
+  <div class="points">
+    240 pts
+  </div>
+
+</div>
+
+
+<div class="card player">
+
+  <div class="player-info">
+
+    <div class="avatar">Д</div>
+
+    <div>
+      <h3>Даня</h3>
+      <div class="level">ROOKIE</div>
+    </div>
+
+  </div>
+
+  <div class="points">
+    155 pts
+  </div>
+
+</div>
+
+
+<div class="card player">
+
+  <div class="player-info">
+
+    <div class="avatar">О</div>
+
+    <div>
+      <h3>Олег</h3>
+      <div class="level">BEGINNER</div>
+    </div>
+
+  </div>
+
+  <div class="points">
+    110 pts
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= LEVELS ================= -->
+
+<div id="levelsPage" class="page">
+
+<div class="page-wrap">
+
+<div class="back" onclick="goHome()">← НАЗАД</div>
+
+<div class="page-title">
+⭐ Рівні
+</div>
+
+<div class="card">
+<h3>LEVEL 0 — Новачок</h3>
+<p>Хват ракетки, стійка, базові правила.</p>
+</div>
+
+<div class="card">
+<h3>LEVEL 1 — Rookie</h3>
+<p>Форхенд, бекхенд, проста подача.</p>
+</div>
+
+<div class="card">
+<h3>LEVEL 2 — Player</h3>
+<p>Стабільна гра, прийом, пересування.</p>
+</div>
+
+<div class="card">
+<h3>LEVEL 3 — Advanced</h3>
+<p>Підрізка, блок, топспін.</p>
+</div>
+
+<div class="card">
+<h3>LEVEL 4 — PRO</h3>
+<p>Тактика, комбінації, складні подачі.</p>
+</div>
+
+<div class="card">
+<h3>LEVEL 5 — Master</h3>
+<p>Повний контроль гри та турнірна практика.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= MATCHES ================= -->
+
+<div id="matchesPage" class="page">
+
+<div class="page-wrap">
+
+<div class="back" onclick="goHome()">← НАЗАД</div>
+
+<div class="page-title">
+⚔️ Матчі
+</div>
+
+<div class="card">
+<h3>Макс 🆚 Даня</h3>
+<p>Рахунок: <span class="highlight">3 : 1</span></p>
+<p>Переможець: Макс</p>
+</div>
+
+<div class="card">
+<h3>Даня 🆚 Олег</h3>
+<p>Рахунок: <span class="highlight">3 : 2</span></p>
+<p>Переможець: Даня</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= COMPETITIONS ================= -->
+
+<div id="competitionsPage" class="page">
+
+<div class="page-wrap">
+
+<div class="back" onclick="goHome()">← НАЗАД</div>
+
+<div class="page-title">
+🏆 Змагання
+</div>
+
+<div class="card">
+<h3>Ping Pro Cup #1</h3>
+<p>📅 20 вересня</p>
+<p>📍 Zoloche</p>
+<p class="highlight">Реєстрація відкрита</p>
+</div>
+
+<div class="card">
+<h3>Zoloche Ping Challenge</h3>
+<p>📅 Жовтень</p>
+<p>Тренувальний турнір між друзями.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= RANKING ================= -->
+
+<div id="rankingPage" class="page">
+
+<div class="page-wrap">
+
+<div class="back" onclick="goHome()">← НАЗАД</div>
+
+<div class="page-title">
+🥇 Рейтинг
+</div>
+
+<div class="card rank">
+
+<div class="rank-number">#1</div>
+
+<div>
+<h3>Макс</h3>
+<p>PLAYER</p>
+</div>
+
+<div class="points">
+240
+</div>
+
+</div>
+
+
+<div class="card rank">
+
+<div class="rank-number">#2</div>
+
+<div>
+<h3>Даня</h3>
+<p>ROOKIE</p>
+</div>
+
+<div class="points">
+155
+</div>
+
+</div>
+
+
+<div class="card rank">
+
+<div class="rank-number">#3</div>
+
+<div>
+<h3>Олег</h3>
+<p>BEGINNER</p>
+</div>
+
+<div class="points">
+110
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= RULES ================= -->
+
+<div id="rulesPage" class="page">
+
+<div class="page-wrap">
+
+<div class="back" onclick="goHome()">← НАЗАД</div>
+
+<div class="page-title">
+📖 Правила
+</div>
+
+<div class="card">
+
+<h3>🏓 Правила гри</h3>
+
+<ol class="rules-list">
+
+<li>Партія грається до 11 очок.</li>
+
+<li>Потрібно виграти мінімум у 2 очки.</li>
+
+<li>Подача змінюється кожні 2 очки.</li>
+
+<li>При 10:10 подача змінюється після кожного очка.</li>
+
+<li>М'яч під час подачі спочатку відскакує на своїй половині.</li>
+
+<li>Потім м'яч має потрапити на половину суперника.</li>
+
+<li>Не можна торкатися столу вільною рукою під час розіграшу.</li>
+
+</ol>
+
+</div>
+
+
+<div class="card">
+
+<h3>🎯 Правила Ping Pro Academy</h3>
+
+<ol class="rules-list">
+
+<li>Поважай суперника.</li>
+
+<li>Не кидай ракетку.</li>
+
+<li>Не бий ракеткою по столу.</li>
+
+<li>Не заважай іншим гравцям.</li>
+
+<li>Після тренування збери м'ячі.</li>
+
+<li>Грай чесно.</li>
+
+</ol>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openPage(pageId){
+
+  document
+  .querySelectorAll(".page")
+  .forEach(page=>{
+    page.classList.remove("active");
+  });
+
+  document
+  .getElementById(pageId)
+  .classList.add("active");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+function goHome(){
+
+  document
+  .querySelectorAll(".page")
+  .forEach(page=>{
+    page.classList.remove("active");
+  });
+
+  document
+  .getElementById("homePage")
+  .classList.add("active");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+</script>
+
+</body>
+</html>
